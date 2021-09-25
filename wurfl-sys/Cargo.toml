@@ -1,0 +1,8 @@
+[package]
+name = "wurfl-sys"
+version = "0.8.0"
+authors = ["paulborile <paul.borile@scientiamobile.com>", "Andrea Castello <support@scientiamobile.com>"]
+edition = "2018"
+links = "wurfl"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

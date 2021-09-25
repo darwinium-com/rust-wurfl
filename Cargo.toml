@@ -1,0 +1,14 @@
+[package]
+name = "wurfl"
+version = "0.8.0"
+authors = ["Paul Stephen Borile <support@scientiamobile.com>", "Andrea Castello <support@scientiamobile.com>"]
+edition = "2018"
+
+[dependencies]
+thiserror = "1.0"
+bindgen = "0.58.1"
+wurfl-sys = { version = "0.8.0", path = "wurfl-sys" }
+# the following dependencies are needed to make the hyper example work.
+# you can comment them you don't want to keep or use it.
+hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1.8.0", features = ["full"] }
