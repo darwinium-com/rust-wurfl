@@ -610,6 +610,11 @@ impl Wurfl {
         }
         return None;
     }
+
+    pub fn get_important_headers(&self) -> &HashMap<String, CString> {
+        return &self.important_header_cstring_names;
+    }
+
 }
 // END UPDATER METHODS ------------------------------------------------------------------------
 
