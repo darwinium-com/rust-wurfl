@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 thiserror = "1.0"
-bindgen = "0.60.1"
+bindgen = "*"
 wurfl-sys = { version = "0.8.0", path = "wurfl-sys" }
 # the following dependencies are needed to make the hyper example work.
 # you can comment them you don't want to keep or use it.
