@@ -835,6 +835,10 @@ impl Wurfl {
         }
         None
     }
+
+    pub fn get_important_headers(&self) -> &Vec<String> {
+        &self._important_header_names
+    }
 }
 
 /// Gets a list of all static capabilities supported by the WURFL engine.
