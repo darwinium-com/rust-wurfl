@@ -4,7 +4,20 @@ rust bindings to InFuze C API (libwurfl).
 ### wurfl-sys
 
 This directory contains the bindings to the InFuze libwurfl (which MUST be installed to make everything work).
-It requires Rust edition 2018 to work.
+It requires Rust edition 2021 to work.
+
+### generate bindings for libwurfl with rust-bindgen
+You can generate a new `bindings.rs` file, which contains the code that works as a bridge from `libwurfl`, written in C,
+and `rust-wurfl` using this command: 
+
+```shell
+ bindgen <path_to>/wurfl.h -o <path_to>/bindings.rs
+ 
+ You can find `wurfl.h` in libwurfl repo at https://github.com/ScientiaMobile/wurfl-infuze-libwurfl
+ You can find the usage guide for bindgen here: https://rust-lang.github.io/rust-bindgen/command-line-usage.html 
+```
+
+You'll need to regenerate the bindings file whenever you want to introduce in rust-wurfl new API calls from libwurfl.
 
 ### rust-wurfl
 rust-wurfl is the root project that contains the `wurfl-sys`. 
@@ -76,3 +89,13 @@ Printing all virtual capability names -------------------
 ```
 
 Please note that the number and availability of capabilities may change depending on yout WURFL license.
+
+### Launching the tests
+
+You just have to run this command:
+```shell
+WURFL_UPDATE_URL=https://data.scientiamobile.com/xxxxx/wurfl.zip cargo test -- --test-threads=1
+```
+
+being careful to replace the `xxxxx` with your WURFL license token.
+Test will panic if the WURFL_UPDATE_URL is not set properly.

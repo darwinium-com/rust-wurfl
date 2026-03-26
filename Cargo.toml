@@ -1,14 +1,17 @@
 [package]
 name = "wurfl"
-version = "0.8.0"
+version = "1.8.0"
 authors = ["Paul Stephen Borile <support@scientiamobile.com>", "Andrea Castello <support@scientiamobile.com>"]
-edition = "2018"
+edition = "2021"
+resolver = "2"
 
 [dependencies]
-thiserror = "1.0"
-bindgen = "*"
-wurfl-sys = { version = "0.8.0", path = "wurfl-sys" }
+thiserror = "2.0.0"
+bindgen = "0.71.1"
+wurfl-sys = { version = "1.1.0", path = "wurfl-sys" }
 # the following dependencies are needed to make the hyper example work.
 # you can comment them you don't want to keep or use it.
-#hyper = { version = "0.14", features = ["full"] }
-#tokio = { version = "1.8.0", features = ["full"] }
+hyper = { version = "1.0.0", features = ["full"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+tokio = { version = "1.8.0", features = ["full"] }
+tempfile = "3" # used only for unit testing, minumum rust version 1.63
